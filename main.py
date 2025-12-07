@@ -175,7 +175,7 @@ GENERA LA ACTIVIDAD:"""
         
         return {
             "success": True,
-            "contenido": contenido,
+            "resultado": contenido,
             "nivel": datos.nivel,
             "curso": datos.curso,
             "asignatura": datos.asignatura,
@@ -242,7 +242,7 @@ GENERA EL EXAMEN:"""
         
         return {
             "success": True,
-            "contenido": contenido,
+            "resultado": contenido,
             "nivel": datos.nivel,
             "curso": datos.curso,
             "asignatura": datos.asignatura,
@@ -307,7 +307,7 @@ GENERA LOS PROBLEMAS:"""
         
         return {
             "success": True,
-            "contenido": contenido,
+            "resultado": contenido,
             "nivel": datos.nivel,
             "curso": datos.curso,
             "tema": datos.tema,
@@ -375,7 +375,7 @@ GENERA LA RÚBRICA:"""
         
         return {
             "success": True,
-            "contenido": contenido,
+            "resultado": contenido,
             "nivel": datos.nivel,
             "curso": datos.curso,
             "asignatura": datos.asignatura,
@@ -445,7 +445,7 @@ GENERA LA UNIDAD DIDÁCTICA:"""
         
         return {
             "success": True,
-            "contenido": contenido,
+            "resultado": contenido,
             "nivel": datos.nivel,
             "curso": datos.curso,
             "asignatura": datos.asignatura,
@@ -519,7 +519,7 @@ GENERA LA SITUACIÓN DE APRENDIZAJE:"""
         
         return {
             "success": True,
-            "contenido": contenido,
+            "resultado": contenido,
             "nivel": datos.nivel,
             "curso": datos.curso,
             "asignatura": datos.asignatura,
@@ -619,7 +619,7 @@ GENERA LA PROGRAMACIÓN DIDÁCTICA:"""
         
         return {
             "success": True,
-            "contenido": contenido,
+            "resultado": contenido,
             "nivel": datos.nivel,
             "curso": datos.curso,
             "asignatura": datos.asignatura,
@@ -728,7 +728,7 @@ GENERA LA ADAPTACIÓN CURRICULAR:"""
         
         return {
             "success": True,
-            "contenido": contenido,
+            "resultado": contenido,
             "nivel": datos.nivel,
             "curso": datos.curso,
             "asignatura": datos.asignatura,
