@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocentIA - Generadores</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f8f9fa;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 3rem;
+            box-shadow: 0 4px 20px rgba(16, 185, 129, 0.3);
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+        }
+
+        .generadores-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 25px rgba(16, 185, 129, 0.3);
+            border-color: #10b981;
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .card h2 {
+            color: #10b981;
+            margin: 0 0 0.5rem 0;
+            font-size: 1.4rem;
+        }
+
+        .card p {
+            color: #6b7280;
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        .card-badge {
+            display: inline-block;
+            background: #d1fae5;
+            color: #065f46;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            margin-top: 0.75rem;
+            font-weight: 600;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: #6b7280;
+            border-top: 1px solid #e5e7eb;
+            margin-top: 3rem;
+        }
+
+        .footer-logo {
+            color: #10b981;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .generadores-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        <div class="header">
+            <h1>🎓 DocentIA - Generadores</h1>
+            <p>Elige el generador que necesites para crear documentación educativa LOMLOE</p>
+        </div>
+
+        <!-- GRID DE GENERADORES -->
+        <div class="generadores-grid">
+            <!-- Botón de Emergencia -->
+            <a href="generadores/boton-emergencia.html" class="card">
+                <div class="card-icon">⚡</div>
+                <h2>Botón de Emergencia</h2>
+                <p>Actividades completas en 30 segundos para situaciones imprevistas</p>
+                <span class="card-badge">✨ Gratis</span>
+            </a>
+
+            <!-- Unidades Didácticas -->
+            <a href="generadores/unidades-didacticas.html" class="card">
+                <div class="card-icon">📚</div>
+                <h2>Unidades Didácticas</h2>
+                <p>Programaciones completas con competencias clave y saberes básicos</p>
+                <span class="card-badge">⭐ Completo</span>
+            </a>
+
+            <!-- Exámenes -->
+            <a href="generadores/examenes.html" class="card">
+                <div class="card-icon">📝</div>
+                <h2>Exámenes</h2>
+                <p>Pruebas de evaluación alineadas con criterios LOMLOE</p>
+                <span class="card-badge">⭐ Profesional</span>
+            </a>
+
+            <!-- Rúbricas -->
+            <a href="generadores/rubricas.html" class="card">
+                <div class="card-icon">📋</div>
+                <h2>Rúbricas</h2>
+                <p>Criterios de evaluación detallados por niveles de desempeño</p>
+                <span class="card-badge">⭐ Estándar</span>
+            </a>
+
+            <!-- Situaciones de Aprendizaje -->
+            <a href="generadores/situaciones-aprendizaje.html" class="card">
+                <div class="card-icon">🎯</div>
+                <h2>Situaciones de Aprendizaje</h2>
+                <p>Proyectos competenciales según Real Decreto LOMLOE</p>
+                <span class="card-badge">⭐ Completo</span>
+            </a>
+
+            <!-- Informes a Familias -->
+            <a href="generadores/informes-familias.html" class="card">
+                <div class="card-icon">📧</div>
+                <h2>Informes a Familias</h2>
+                <p>Comunicación personalizada y profesional con las familias</p>
+                <span class="card-badge">⭐ Personalizado</span>
+            </a>
+
+            <!-- Generador de Ideas -->
+            <a href="generadores/ideas.html" class="card">
+                <div class="card-icon">💡</div>
+                <h2>Generador de Ideas</h2>
+                <p>Inspiración didáctica y actividades innovadoras</p>
+                <span class="card-badge">✨ Creativo</span>
+            </a>
+
+            <!-- Problemas de Matemáticas -->
+            <a href="generadores/problemas-matematicas.html" class="card">
+                <div class="card-icon">🔢</div>
+                <h2>Problemas de Matemáticas</h2>
+                <p>Ejercicios contextualizados con soluciones paso a paso</p>
+                <span class="card-badge">🆕 Nuevo</span>
+            </a>
+        </div>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <div class="footer-logo">🎓 DocentIA</div>
+            <p>© 2025 DocentIA. Diseñado para docentes de Extremadura.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.85rem;">
+                Cumple 100% con LOMLOE, RD 157/2022, RD 217/2022, Decreto 107/2022 y 110/2022
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

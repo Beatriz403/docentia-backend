@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botón de Emergencia - DocentIA</title>
+    
+    <!-- CSS Común -->
+    <link rel="stylesheet" href="../assets/css/common.css">
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="navbar-content">
+            <a href="https://v0-education-technology-9l50m1spx.vercel.app/" class="logo">
+                🎓 DocentIA
+            </a>
+            <ul class="nav-links">
+                <li><a href="https://v0-education-technology-9l50m1spx.vercel.app/#funciones">Funciones</a></li>
+                <li><a href="https://v0-education-technology-9l50m1spx.vercel.app/#precios">Precios</a></li>
+                <li><a href="https://v0-education-technology-9l50m1spx.vercel.app/#testimonios">Testimonios</a></li>
+                <li><a href="https://v0-education-technology-9l50m1spx.vercel.app/#faq">FAQ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <div class="container">
+        <!-- HEADER -->
+        <div class="page-header">
+            <h1>⚡ Botón de Emergencia</h1>
+            <p>Genera actividades completas en 30 segundos para situaciones imprevistas</p>
+            <span class="emergency-badge">✨ Gratis - 5 usos/mes</span>
+        </div>
+
+        <!-- ALERTA -->
+        <div id="alert" class="alert"></div>
+
+        <!-- FORMULARIO -->
+        <div class="card" id="formulario">
+            <h2>📝 Datos de la actividad</h2>
+            
+            <form id="emergenciaForm">
+                <div class="form-group">
+                    <label for="nivel">Nivel Educativo *</label>
+                    <select id="nivel" required>
+                        <option value="">Selecciona un nivel</option>
+                        <option value="Primaria">Primaria</option>
+                        <option value="ESO">ESO</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="curso">Curso *</label>
+                    <select id="curso" required disabled>
+                        <option value="">Selecciona primero un nivel</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="asignatura">Asignatura *</label>
+                    <select id="asignatura" required disabled>
+                        <option value="">Selecciona primero un curso</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="situacion">Describe la situación urgente *</label>
+                    <textarea 
+                        id="situacion" 
+                        placeholder="Ejemplo: Necesito una actividad sobre fracciones para 45 minutos porque tengo que sustituir a un compañero"
+                        required
+                    ></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="duracion">Duración de la actividad *</label>
+                    <select id="duracion" required>
+                        <option value="">Selecciona duración</option>
+                        <option value="15 minutos">15 minutos</option>
+                        <option value="30 minutos">30 minutos</option>
+                        <option value="45 minutos">45 minutos</option>
+                        <option value="60 minutos">1 hora</option>
+                    </select>
+                </div>
+
+                <div class="btn-group">
+                    <button type="submit" class="btn btn-primary" id="btnGenerar">
+                        ⚡ Generar Actividad (30 segundos)
+                    </button>
+                    <button type="button" class="btn btn-secondary" id="btnLimpiar">
+                        🔄 Limpiar Formulario
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- LOADING -->
+        <div class="card loading" id="loading">
+            <div class="spinner"></div>
+            <h3>⚡ Generando actividad de emergencia...</h3>
+            <p>Claude está creando tu actividad perfecta en tiempo récord</p>
+        </div>
+
+        <!-- RESULTADO -->
+        <div class="card resultado" id="resultado">
+            <div class="resultado-content">
+                <h3>✅ Actividad de Emergencia Generada</h3>
+                <div class="resultado-text" id="resultadoTexto"></div>
+                <div class="btn-group">
+                    <button class="btn btn-primary" id="btnDescargar">
+                        📥 Descargar Word
+                    </button>
+                    <button class="btn btn-secondary" id="btnNueva">
+                        ➕ Nueva Actividad
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-logo">🎓 DocentIA</div>
+        <p>© 2025 DocentIA. Diseñado para docentes de Extremadura.</p>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script src="../assets/js/common.js"></script>
+    <script src="../assets/js/boton-emergencia.js"></script>
+</body>
+</html>

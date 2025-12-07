@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Problemas de Matemáticas - DocentIA</title>
+    
+    <!-- CSS Común -->
+    <link rel="stylesheet" href="../assets/css/common.css">
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="navbar-content">
+            <a href="https://v0-education-technology-9l50m1spx.vercel.app/" class="logo">
+                🎓 DocentIA
+            </a>
+            <ul class="nav-links">
+                <li><a href="https://v0-education-technology-9l50m1spx.vercel.app/#funciones">Funciones</a></li>
+                <li><a href="https://v0-education-technology-9l50m1spx.vercel.app/#precios">Precios</a></li>
+                <li><a href="https://v0-education-technology-9l50m1spx.vercel.app/#testimonios">Testimonios</a></li>
+                <li><a href="https://v0-education-technology-9l50m1spx.vercel.app/#faq">FAQ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <div class="container">
+        <!-- HEADER -->
+        <div class="page-header">
+            <h1>🔢 Problemas de Matemáticas</h1>
+            <p>Genera problemas contextualizados con soluciones detalladas para Primaria</p>
+            <span class="math-badge">📐 Adaptado al currículo LOMLOE y Extremadura</span>
+        </div>
+
+        <!-- INFO BOX -->
+        <div class="info-box">
+            <p><strong>💡 ¿Qué genera este generador?</strong></p>
+            <p>✅ Problemas contextualizados adaptados al curso</p>
+            <p>✅ Diferentes niveles de dificultad</p>
+            <p>✅ Soluciones paso a paso explicadas</p>
+            <p>✅ Hoja de respuestas separada para el profesor</p>
+        </div>
+
+        <!-- ALERTA -->
+        <div id="alert" class="alert"></div>
+
+        <!-- FORMULARIO -->
+        <div class="card" id="formulario">
+            <h2>📝 Configuración de los problemas</h2>
+            
+            <form id="problemasForm">
+                <div class="form-group">
+                    <label for="curso">Curso *</label>
+                    <select id="curso" required>
+                        <option value="">Selecciona un curso</option>
+                        <option value="1º de Primaria">1º de Primaria</option>
+                        <option value="2º de Primaria">2º de Primaria</option>
+                        <option value="3º de Primaria">3º de Primaria</option>
+                        <option value="4º de Primaria">4º de Primaria</option>
+                        <option value="5º de Primaria">5º de Primaria</option>
+                        <option value="6º de Primaria">6º de Primaria</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="tematica">Temática *</label>
+                    <select id="tematica" required>
+                        <option value="">Selecciona primero un curso</option>
+                    </select>
+                    
+                    <!-- Campo "Otro" que aparece si se selecciona "Otro (especificar)" -->
+                    <div id="otroContainer" class="otro-especificar">
+                        <input 
+                            type="text" 
+                            id="otraTematica" 
+                            placeholder="Especifica la temática (ej: Problemas de proporcionalidad)"
+                        />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="dificultad">Nivel de dificultad *</label>
+                    <select id="dificultad" required>
+                        <option value="">Selecciona dificultad</option>
+                        <option value="Fácil">Fácil - Conceptos básicos</option>
+                        <option value="Medio">Medio - Aplicación estándar</option>
+                        <option value="Difícil">Difícil - Razonamiento avanzado</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="numeroProblemas">Número de problemas *</label>
+                    <select id="numeroProblemas" required>
+                        <option value="">¿Cuántos problemas?</option>
+                        <option value="5">5 problemas</option>
+                        <option value="10" selected>10 problemas</option>
+                        <option value="15">15 problemas</option>
+                        <option value="20">20 problemas</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="incluirSoluciones" checked>
+                        <label for="incluirSoluciones">Incluir soluciones paso a paso</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="contexto">Contexto adicional <span class="label-optional">(opcional)</span></label>
+                    <textarea 
+                        id="contexto" 
+                        rows="3"
+                        placeholder="Ej: Los problemas deben estar ambientados en situaciones de la vida diaria, usar nombres de niños, incluir contextos cercanos a Extremadura..."
+                    ></textarea>
+                </div>
+
+                <div class="btn-group">
+                    <button type="submit" class="btn btn-primary" id="btnGenerar">
+                        🔢 Generar Problemas
+                    </button>
+                    <button type="button" class="btn btn-secondary" id="btnLimpiar">
+                        🔄 Limpiar Formulario
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- LOADING -->
+        <div class="card loading" id="loading">
+            <div class="spinner"></div>
+            <h3>🧮 Generando problemas de matemáticas...</h3>
+            <p>Claude está creando problemas contextualizados y sus soluciones</p>
+        </div>
+
+        <!-- RESULTADO -->
+        <div class="card resultado" id="resultado">
+            <div class="resultado-content">
+                <h3>✅ Problemas de Matemáticas Generados</h3>
+                <div class="resultado-text" id="resultadoTexto"></div>
+                <div class="btn-group">
+                    <button class="btn btn-primary" id="btnDescargar">
+                        📥 Descargar Word
+                    </button>
+                    <button class="btn btn-secondary" id="btnNuevos">
+                        ➕ Generar Más Problemas
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-logo">🎓 DocentIA</div>
+        <p>© 2025 DocentIA. Diseñado para docentes de Extremadura.</p>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script src="../assets/js/common.js"></script>
+    <script src="../assets/js/problemas-matematicas.js"></script>
+</body>
+</html>
