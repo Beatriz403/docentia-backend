@@ -28,11 +28,10 @@ class Settings(BaseSettings):
     
     # === CORS ===
     CORS_ORIGINS: List[str] = [
-        "http://localhost:3000",
-        "http://localhost:8000",
-        "https://tu-frontend.vercel.app"
-    ]
-    
+    "http://localhost:3000",
+    "http://localhost:8000",
+    "https://docentia-frontend.vercel.app"
+]    
     # === PROVEEDORES DE IA ===
     AI_PROVIDER: str = os.getenv("AI_PROVIDER", "claude")  # claude, openai, gemini
     
