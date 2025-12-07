@@ -19,6 +19,7 @@ app.add_middleware(
     allow_origins=[
         "https://docentia-frontend.vercel.app",
         "https://docentia-ex.vercel.app",
+        "https://docentia-app.vercel.app",
         "https://docentia-generadores.vercel.app",
         "https://beatriz403-v0-education-technology.vercel.app",
         "http://localhost:3000",
